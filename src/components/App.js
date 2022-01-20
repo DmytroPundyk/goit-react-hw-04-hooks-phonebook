@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList.jsx';
@@ -42,6 +42,16 @@ const App = () => {
       setContacts(contacts.filter(({ id }) => id !== contactId));
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('contacts')) {
+      setContacts(JSON.parse(localStorage.getItem('contacts')));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const visibleContacts = getVisibleContacts();
 
