@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const List = styled.ol`
   border: 2px solid #000;
-  border-radius: 7px;
+  border-radius: 8px;
   padding: 20px 20px;
 `;
 export const Item = styled.li`
