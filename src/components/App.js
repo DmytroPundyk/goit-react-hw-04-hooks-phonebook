@@ -11,7 +11,7 @@ const App = () => {
 
   const addContact = (name, number) => {
     if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is already in contacts`);
+      alert(`${name} is already in contacts!`);
     } else if (name.length === 0) {
       alert('Fields must be filled!');
       return;
